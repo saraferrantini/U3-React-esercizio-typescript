@@ -7,7 +7,6 @@ import { Card, Col, Row } from "react-bootstrap";
 interface Article {
   id: string;
   title: string;
-  // Aggiungi altre proprietà dell'articolo se necessario
 }
 
 const ArticleList: React.FC = () => {
@@ -23,9 +22,8 @@ const ArticleList: React.FC = () => {
       })
       .then((data) => {
         console.log("Dati ricevuti:", data);
-        // Verifica se i dati contengono la proprietà 'results'
+
         if (data.results && Array.isArray(data.results)) {
-          // Estrai l'array di articoli da 'results'
           setArticles(data.results);
         } else {
           throw new Error("I dati ottenuti non sono nel formato corretto");
@@ -43,7 +41,7 @@ const ArticleList: React.FC = () => {
           <Card className="h-100">
             <Card.Body>
               <Card.Title>{article.title}</Card.Title>
-              {/* Aggiungi altre informazioni dell'articolo, come data di pubblicazione, immagine di copertina, ecc. */}
+              {/* altre informazioni dell'articolo, come data di pubblicazione, immagine di copertina, ecc. */}
             </Card.Body>
           </Card>
         </Col>
